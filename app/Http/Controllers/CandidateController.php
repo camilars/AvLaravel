@@ -47,6 +47,7 @@ class CandidateController extends Controller
         $candidate->numeroCandidato=$request->get('numeroCandidato');
         $candidate->endereco=$request->get('endereco');
         $candidate->fk_groups=$request->get('fk_groups');
+        $candidate->votos=$request->get('votos');
         $candidate->filename=$name;
         $candidate->save();
         
@@ -105,5 +106,13 @@ class CandidateController extends Controller
         $group = \App\Candidate::find($id);
         $group->delete();
         return redirect('candidates')->with('success','Information has been  deleted');
+    }
+
+    public function votar(Request $request, $id)
+    {
+        $candidate= \App\Candidate::find($id);
+        $candidate->votos=$request->get('votos');
+        $candidate->save();
+        return redirect('candidates');
     }
 }

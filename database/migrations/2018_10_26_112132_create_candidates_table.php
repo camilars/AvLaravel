@@ -20,6 +20,7 @@ class CreateCandidatesTable extends Migration
             $table->integer('numeroCandidato');
             $table->string('endereco');
             $table->string('filename');
+            $table->integer('votos');
             $table->integer('fk_groups')->unsigned();
             $table->foreign('fk_groups')->references('id')->on('groups');
             $table->timestamps();

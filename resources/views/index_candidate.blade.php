@@ -41,6 +41,7 @@
             <button class="btn btn-danger" type="submit">Delete</button>
           </form>
         </td>
+        <td><a href="{{action('CandidateController@votar', $candidate['id'])}}" class="btn btn-warning">Votar</a></td>
       </tr>
       @endforeach
     </tbody>

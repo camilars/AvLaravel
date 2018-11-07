@@ -16,23 +16,26 @@
     <table class="table table-striped">
     <thead>
       <tr>
+        <th>Foto</th>
         <th>Nome completo</th>
         <th>Nome fantasia</th>
         <th>Número do candidato</th>
         <th>Endereço</th>
+
       </tr>
     </thead>
     <tbody>
       
       @foreach($candidates as $candidate)
       <tr>
+        <td><img src="/images/{{$candidate['filename']}}" style="height: 50px; width: 50px;"></td>
         <td>{{$candidate['nomeCompleto']}}</td>
         <td>{{$candidate['nomeFantasia']}}</td>
         <td>{{$candidate['numeroCandidato']}}</td>
         <td>{{$candidate['endereco']}}</td>   
-        <td><a href="{{action('CandidateController@edit', $cadidate['id'])}}" class="btn btn-warning">Edit</a></td>
+        <td><a href="{{action('CandidateController@edit', $candidate['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
-          <form action="{{action('CandidateController@destroy', $cadidate['id'])}}" method="post">
+          <form action="{{action('CandidateController@destroy', $candidate['id'])}}" method="post">
             @csrf
             <input name="_method" type="hidden" value="DELETE">
             <button class="btn btn-danger" type="submit">Delete</button>

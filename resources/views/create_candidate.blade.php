@@ -55,7 +55,8 @@
        <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-              <input type="hidden" class="form-control" name="fk_groups" value="2">
+              <label for="endereco">ID Partido:</label>
+              <input type="number" class="form-control" name="fk_groups">
             </div>
           </div>
         </div>
